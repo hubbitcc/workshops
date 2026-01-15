@@ -306,7 +306,7 @@ ssh-keygen -t ed25519 -C "your.email@example.com"
 # Press Enter to accept default location
 # Enter a passphrase (optional but recommended; remember it!)
 
-# Copy your public key
+# Show your public key and copy it
 cat ~/.ssh/id_ed25519.pub
 ```
 
