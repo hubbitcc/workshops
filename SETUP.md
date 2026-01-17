@@ -106,7 +106,111 @@ Choose your platform below.
 
 <div class="page-break-after"></div>
 
-## Section 2: Installing VS Code
+## Section 2: Setting Up Git
+
+**What is Git?** Version control system - save your code history and collaborate with others.
+
+### Installation
+
+**Linux / WSL:**
+
+```bash
+sudo apt install git
+```
+
+**Mac:**
+Git comes pre-installed. If for some reason it's not there, run:
+
+```bash
+xcode-select --install
+```
+
+### Configuration
+
+After installation, configure Git with your information and set default branch name:
+
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+git config --global init.defaultBranch main
+```
+
+**Verification:**
+
+```bash
+git --version
+git config --list
+```
+
+## Section 3: GitHub Account Setup
+
+**What is GitHub?** A website for hosting and sharing code using Git.
+
+### Quick note on password management
+
+Using a password manager is highly recommended to securely store your passwords and SSH keys. Some popular options include Bitwarden and 1Password. Bitwarden offers a free tier that is quite robust and can be accessed across multiple devices. Teaching youth to use a password manager and avoiding password reuse is a valuable skill for maintaining good security practices. Students will need to have access to their GitHub account during the workshop, so ensuring they can log in easily is important.
+
+### Creating an Account
+
+1. Go to [https://github.com/](https://github.com/)
+2. Click "Sign up"
+3. Follow the prompts (free account is fine)
+4. Verify your email
+
+### SSH Key Setup (Optional but Recommended)
+
+**Why?** No need to enter password every time you push/pull.
+
+**Official Guide:** [GitHub SSH Setup](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
+
+**Quick Steps:**
+
+```bash
+# Generate SSH key
+ssh-keygen -t ed25519 -C "your.email@example.com"
+
+# Press Enter to accept default location
+# Enter a passphrase (optional but recommended; remember it!)
+
+# Show your public key and copy it
+cat ~/.ssh/id_ed25519.pub
+```
+
+Then:
+
+1. Go to GitHub Settings → SSH and GPG keys
+2. Click "New SSH key"
+3. Paste your public key
+4. Save
+5. Test: `ssh -T git@github.com`
+
+## Section 4: Cloning the Workshop Repository
+
+**Forking the Repo:**
+
+1. Go to the workshop repository URL: <https://github.com/Lansing-Tech-Studio/workshops>
+2. Click "Fork" (upper right) to create your own copy
+3. Choose your GitHub account
+
+**Cloning the Repo:**
+
+```bash
+# Replace USERNAME with your GitHub username
+git clone https://github.com/USERNAME/workshops.git
+cd workshops
+```
+
+If you have trouble with HTTPS, use SSH:
+
+```bash
+# Replace USERNAME with your GitHub username
+git clone git@github.com:USERNAME/workshops.git
+cd workshops
+```
+
+<div class="page-break-after"></div>
+
+## Section 5: Installing VS Code
 
 **What is VS Code?** Visual Studio Code is a free code editor made by Microsoft. It's powerful, customizable, and used by millions of developers.
 
@@ -154,7 +258,7 @@ Install these VS Code extensions:
 - Create a test file
 - See syntax highlighting
 
-## Section 3: Installing Node.js
+## Section 6: Installing Node.js
 
 **What is Node.js?** Node.js lets you run JavaScript outside the browser. We'll use it for JavaScript workshops.
 
@@ -200,7 +304,7 @@ npm --version     # Should show version number
 
 <div class="page-break-after"></div>
 
-## Section 4: Installing Python 3
+## Section 7: Installing Python 3
 
 **What is Python?** Python is a programming language we'll use in workshops 4 and 5.
 
@@ -233,115 +337,6 @@ brew install python3
 
 ```bash
 python3 --version    # Should show 3.8 or higher
-```
-
-<div class="page-break-after"></div>
-
-## Section 5: Setting Up Git
-
-**What is Git?** Version control system - save your code history and collaborate with others.
-
-### Installation
-
-**Linux / WSL:**
-
-```bash
-sudo apt install git
-```
-
-**Mac:**
-Git comes pre-installed. If for some reason it's not there, run:
-
-```bash
-xcode-select --install
-```
-
-**Windows (outside WSL):**
-Download from [git-scm.com](https://git-scm.com/download/win)
-
-**Note:** If using WSL, install Git inside Ubuntu.
-
-### Configuration
-
-After installation, configure Git with your information and set default branch name:
-
-```bash
-git config --global user.name "Your Name"
-git config --global user.email "your.email@example.com"
-git config --global init.defaultBranch main
-```
-
-**Verification:**
-
-```bash
-git --version
-git config --list
-```
-
-## Section 6: GitHub Account Setup
-
-**What is GitHub?** A website for hosting and sharing code using Git.
-
-### Quick note on password management
-
-Using a password manager is highly recommended to securely store your passwords and SSH keys. Some popular options include Bitwarden and 1Password. Bitwarden offers a free tier that is quite robust and can be accessed across multiple devices. Teaching youth to use a password manager and avoiding password reuse is a valuable skill for maintaining good security practices. Students will need to have access to their GitHub account during the workshop, so ensuring they can log in easily is important.
-
-### Creating an Account
-
-1. Go to [https://github.com/](https://github.com/)
-2. Click "Sign up"
-3. Follow the prompts (free account is fine)
-4. Verify your email
-
-### SSH Key Setup (Optional but Recommended)
-
-**Why?** No need to enter password every time you push/pull.
-
-**Official Guide:** [GitHub SSH Setup](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
-
-**Quick Steps:**
-
-```bash
-# Generate SSH key
-ssh-keygen -t ed25519 -C "your.email@example.com"
-
-# Press Enter to accept default location
-# Enter a passphrase (optional but recommended; remember it!)
-
-# Show your public key and copy it
-cat ~/.ssh/id_ed25519.pub
-```
-
-Then:
-
-1. Go to GitHub Settings → SSH and GPG keys
-2. Click "New SSH key"
-3. Paste your public key
-4. Save
-5. Test: `ssh -T git@github.com`
-
-## Section 7: Cloning the Workshop Repository
-
-**Forking the Repo:**
-
-1. Go to the workshop repository URL: <https://github.com/Lansing-Tech-Studio/workshops>
-2. Click "Fork" (upper right) to create your own copy
-3. Choose your GitHub account
-
-**Cloning the Repo:**
-
-```bash
-# Replace USERNAME with your GitHub username
-git clone https://github.com/USERNAME/workshops.git
-cd workshops
-```
-
-If you have trouble with HTTPS, use SSH:
-
-```bash
-# Replace USERNAME with your GitHub username
-git clone git@github.com:USERNAME/workshops.git
-cd workshops
 ```
 
 <div class="page-break-after"></div>
