@@ -31,7 +31,7 @@ let babyFoxes = 0;
 const foxesCute = true;
 const weather = "sunny";
 let rabbitFamily = 5;
-let fatSqurrel = 1;
+let fatSquirrel = 1;
 
 // Step 4: Story Climax
 // Combine your variables to create exciting moments
@@ -41,7 +41,7 @@ console.log("I wonder what I am going to see next.");
 console.log("There are some young foxes!");
 babyFoxes = babyFoxes + 3;
 console.log("I see some other animals, too!");
-console.log("I see " + babyFoxes + " foxes, " + rabbitFamily + " rabbits, and " + fatSqurrel + " chubby squirrel!");
+console.log("I see " + babyFoxes + " foxes, " + rabbitFamily + " rabbits, and " + fatSquirrel + " chubby squirrel!");
 
 // Step 5: Story Ending
 // Use all your variables to create a personalized ending
